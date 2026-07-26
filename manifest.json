@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "APIGarden",
+  "version": "1.4.0",
+  "description": "Generate, test, and monetize APIs with a secure AI backend.",
+  "action": {
+    "default_title": "APIGarden",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
